@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1b1f2a" />
+    <meta name="description" content="法律だけを作って、AI国民の暮らしを眺める放置型国家運営シミュレーション" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="放置法治国家" />
+    <title>放置法治国家</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="title-row">
+          <div class="nation">
+            <span id="nation-name">名もなき国</span>
+            <span id="civ-badge" class="badge">集落</span>
+          </div>
+          <div class="clock">
+            <span id="clock">1日目 6時</span>
+            <div class="speed" role="group" aria-label="速度">
+              <button data-speed="0" title="一時停止">❚❚</button>
+              <button data-speed="1" title="等速（1分＝1時間）">▶</button>
+              <button data-speed="10" title="10倍">▶▶</button>
+              <button data-speed="60" title="60倍">⏩</button>
+            </div>
+          </div>
+        </div>
+        <div id="metrics" class="metrics"></div>
+        <div class="civbar"><div id="civ-progress"></div><span id="civ-label"></span></div>
+      </header>
+
+      <main class="layout">
+        <section class="world">
+          <div class="canvas-wrap">
+            <canvas id="view" aria-label="国土ビュー"></canvas>
+            <div id="citizen-card" class="citizen-card" hidden></div>
+          </div>
+          <div class="feed-head">いま起きていること</div>
+          <ul id="feed" class="feed"></ul>
+        </section>
+
+        <section class="panel">
+          <nav class="tabs" role="tablist">
+            <button data-tab="laws" class="active">法典</button>
+            <button data-tab="cases">判例集</button>
+            <button data-tab="people">国民</button>
+            <button data-tab="stats">統計</button>
+            <button data-tab="settings">設定</button>
+          </nav>
+          <div id="tab-body" class="tab-body"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-box" role="dialog" aria-modal="true"><div id="modal-body"></div></div>
+    </div>
+    <div id="toast" class="toast" hidden></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
