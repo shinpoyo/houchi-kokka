@@ -1,0 +1,19 @@
+{
+  "name": "houchi-kokka",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "balance": "vite-node scripts/balance.ts"
+  },
+  "devDependencies": {
+    "typescript": "5.8",
+    "vite": "^6.4.5",
+    "vitest": "^3.2.7"
+  }
+}
